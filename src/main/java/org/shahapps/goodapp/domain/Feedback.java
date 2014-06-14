@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -18,7 +17,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
-public class Member implements Serializable
+public class Feedback implements Serializable
 {
    /** Default value included to remove warning. Remove or modify at will. **/
    private static final long serialVersionUID = 1L;
@@ -37,16 +36,20 @@ public class Member implements Serializable
    @Email
    private String email;
 
-   @NotNull
-   @Size(min = 10, max = 12)
-   @Digits(fraction = 0, integer = 12)
-   @Column(name = "phone_number")
-   private String phoneNumber;
+//   @NotNull
+//   @Size(min = 10, max = 12)
+//   @Digits(fraction = 0, integer = 12)
+//   @Column(name = "phone_number")
+//   private String phoneNumber;
 
+   @NotNull
+   @Size(min=1, max=1200)
+   @Column (name="comment")
+   private String comment;
+   
    public Long getId() {
       return id;
    }
-
    public void setId(Long id) {
       this.id = id;
    }
@@ -54,7 +57,6 @@ public class Member implements Serializable
    public String getName() {
       return name;
    }
-
    public void setName(String name) {
       this.name = name;
    }
@@ -62,16 +64,14 @@ public class Member implements Serializable
    public String getEmail() {
       return email;
    }
-
    public void setEmail(String email) {
       this.email = email;
    }
-
-   public String getPhoneNumber() {
-      return phoneNumber;
+   
+   public String getComment () {
+	   return comment;
    }
-
-   public void setPhoneNumber(String phoneNumber) {
-      this.phoneNumber = phoneNumber;
+   public void setComment (String comment) {
+	   this.comment = comment;
    }
 }

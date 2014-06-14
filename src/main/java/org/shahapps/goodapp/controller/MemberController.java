@@ -2,8 +2,8 @@ package org.shahapps.goodapp.controller;
 
  import javax.validation.Valid;
 
-import org.shahapps.goodapp.dao.MemberDao;
-import org.shahapps.goodapp.domain.Member;
+import org.shahapps.goodapp.dao.FeedbackDao;
+import org.shahapps.goodapp.domain.Feedback;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping(value="/")
-public class MemberController
+public class FeedbackController
 {
     @Autowired
-    private MemberDao memberDao;
+    private FeedbackDao feedbackDao;
 
     @RequestMapping(method=RequestMethod.GET)
     public String displaySortedMembers(Model model)

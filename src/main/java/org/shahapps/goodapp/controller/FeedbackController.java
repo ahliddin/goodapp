@@ -2,8 +2,8 @@ package org.shahapps.goodapp.controller;
 
 import java.util.List;
 
-import org.shahapps.goodapp.dao.MemberDao;
-import org.shahapps.goodapp.domain.Member;
+import org.shahapps.goodapp.dao.FeedbackDao;
+import org.shahapps.goodapp.domain.Feedback;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,20 +13,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/rest/members")
-public class MemberRestController
+public class FeedbackController
 {
     @Autowired
-    private MemberDao memberDao;
+    private FeedbackDao feedbackDao;
 
     @RequestMapping(method=RequestMethod.GET, produces="application/json")
-    public @ResponseBody List<Member> listAllMembers()
+    public @ResponseBody List<Feedback> listAllFeedbacks()
     {
-        return memberDao.findAllOrderedByName();
+        return feedbackDao.findAllOrderedByName();
     }
 
     @RequestMapping(value="/{id}", method=RequestMethod.GET, produces="application/json")
-    public @ResponseBody Member lookupMemberById(@PathVariable("id") Long id)
+    public @ResponseBody Feedback lookupMemberById(@PathVariable("id") Long id)
     {
-        return memberDao.findById(id);
+        return feedbackDao.findById(id);
     }
 }
