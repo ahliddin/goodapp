@@ -12,7 +12,7 @@
 
 	<properties>
 		<!-- Spring version -->
-		<version.spring>3.1.1.RELEASE</version.spring>
+		<version.spring>3.2.4.RELEASE</version.spring>
 
 		<!-- Spring Third Party dependencies -->
 		<version.aopalliance>1.0</version.aopalliance>
@@ -39,18 +39,6 @@
 				<scope>import</scope>
 			</dependency>
 
-			<!-- Display template & layout -->
-			<dependency>
-				<groupId>opensymphony</groupId>
-				<artifactId>sitemesh</artifactId>
-				<version>${version.sitemesh}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.webjars</groupId>
-				<artifactId>bootstrap</artifactId>
-				<version>${version.bootstrap}</version>
-			</dependency>
-			
 			<!-- Spring dependencies -->
 			<dependency>
 				<groupId>org.springframework</groupId>
@@ -190,10 +178,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-asm</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
 			<artifactId>spring-beans</artifactId>
 		</dependency>
 		<dependency>
@@ -282,15 +266,13 @@
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.9.3</version>
-			<scope>provided</scope>
+			<version>1.9.10</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-core-asl</artifactId>
-			<version>1.9.3</version>
-			<scope>provided</scope>
+			<version>1.9.10</version>
 		</dependency>
 
 		<dependency>

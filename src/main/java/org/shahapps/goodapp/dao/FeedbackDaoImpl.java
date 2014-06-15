@@ -14,18 +14,18 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Transactional
-public class FeedbackDaoImpl implements FeedbackDao
-{
-    @Autowired
+public class FeedbackDaoImpl implements FeedbackDao {
+    
+	@Autowired
     private EntityManager em;
 
-    public Feedback findById(Long id)
-    {
+    public Feedback findById(Long id) {
+    	
         return em.find(Feedback.class, id);
     }
 
-    public Feedback findByEmail(String email)
-    {
+    public Feedback findByEmail(String email)  {
+    	
         CriteriaBuilder builder = em.getCriteriaBuilder();
         CriteriaQuery<Feedback> criteria = builder.createQuery(Feedback.class);
         Root<Feedback> feedback = criteria.from(Feedback.class);
@@ -39,8 +39,8 @@ public class FeedbackDaoImpl implements FeedbackDao
         return em.createQuery(criteria).getSingleResult();
     }
 
-    public List<Feedback> findAllOrderedByName()
-    {
+    public List<Feedback> findAllOrderedByName() {
+    	
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Feedback> criteria = cb.createQuery(Feedback.class);
         Root<Feedback> feedback = criteria.from(Feedback.class);
@@ -53,9 +53,7 @@ public class FeedbackDaoImpl implements FeedbackDao
         return em.createQuery(criteria).getResultList();
     }
 
-    public void register(Feedback feedback)
-    {
+    public void register(Feedback feedback) {
         em.persist(feedback);
-        return;
     }
 }

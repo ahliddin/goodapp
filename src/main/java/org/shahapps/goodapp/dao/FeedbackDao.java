@@ -12,5 +12,5 @@ public interface FeedbackDao
 
     public List<Feedback> findAllOrderedByName();
 
-    public void register(Feedback member);
+    public void register(Feedback feedback);
 }

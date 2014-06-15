@@ -20,7 +20,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Feedback implements Serializable
 {
    /** Default value included to remove warning. Remove or modify at will. **/
-   private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 2L;
 
    @Id
    @GeneratedValue
@@ -46,6 +46,10 @@ public class Feedback implements Serializable
    @Size(min=1, max=1200)
    @Column (name="comment")
    private String comment;
+   
+   @NotNull
+   @Column (name="spam")
+   private Integer spam;
    
    public Long getId() {
       return id;
@@ -73,5 +77,12 @@ public class Feedback implements Serializable
    }
    public void setComment (String comment) {
 	   this.comment = comment;
+   }
+  
+   public Integer getSpam () {
+	   return spam;
+   }
+   public void setSpam (Integer spam) {
+	   this.spam = spam;
    }
 }
