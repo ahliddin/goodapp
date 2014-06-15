@@ -2,4 +2,6 @@ target/
 .classpath
 .project
 .settings
-
+deployments/
+src.bak/
+pom.xml.bak
