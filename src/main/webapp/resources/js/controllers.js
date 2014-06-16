@@ -36,14 +36,14 @@ goodApp.controller("SpeakupCtrl", function($scope, $log, $window, $http) {
 
 });
 
-goodApp.controller("FeedbacksCtrl", function($scope, $http) {
-	$scope.fetchFeedbacks = function() {
-		$http.get("feedbacks").success(function(feedbacks) {
-			$scope.feedbacks = feedbacks;
+goodApp.controller("FeedbacksCtrl", function($scope, $http, $log) {
+	function fetchFeedbacks() {
+		$http.get("feedbacks").success( function(data) {
+			$scope.feedbacks = data;
 		}).error(function() {
 			$log.log("error while fetching feedbacks");
 		});
 	};
 
-	$scope.fetchFeedbacks();
+	fetchFeedbacks();
 });
