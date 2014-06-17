@@ -56,4 +56,9 @@ public class FeedbackDaoImpl implements FeedbackDao {
     public void register(Feedback feedback) {
         em.persist(feedback);
     }
+    
+    public void deleteAllFeedbacks () {
+    	em.createQuery("delete from Feedback").executeUpdate();
+
+    }
 }

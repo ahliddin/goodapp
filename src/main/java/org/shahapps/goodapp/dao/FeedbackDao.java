@@ -13,4 +13,6 @@ public interface FeedbackDao
     public List<Feedback> findAllOrderedByName();
 
     public void register(Feedback feedback);
+    
+    public void deleteAllFeedbacks ();
 }

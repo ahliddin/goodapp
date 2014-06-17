@@ -327,9 +327,9 @@
 			<artifactId>xml-apis</artifactId>
 			<version>1.4.01</version>
 		</dependency>
-
 		<!-- ARQUILLIAN DEPENDECIES -->
-<!--		<dependency>
+<!-- 
+		<dependency>
 			<groupId>org.jboss.arquillian.testng</groupId>
 			<artifactId>arquillian-testng-container</artifactId>
 		</dependency>
@@ -397,7 +397,6 @@
 		</dependency>
 
 
-
 		<dependency>
 			<groupId>org.jboss.spec</groupId>
 			<artifactId>jboss-javaee-6.0</artifactId>
@@ -416,10 +415,8 @@
 			<version>2.1.0.Final</version>
 			<scope>test</scope>
 		</dependency>
--->
-
+ -->
 	</dependencies>
-
 	<build>
 		<finalName>goodapp</finalName>
 		<plugins>

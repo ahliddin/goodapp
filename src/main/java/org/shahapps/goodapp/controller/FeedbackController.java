@@ -27,5 +27,11 @@ public class FeedbackController {
     	System.out.println (list);
         return list;
     }
+	
+	@RequestMapping(value="/feedbacks", method=RequestMethod.DELETE) 
+    public @ResponseBody void deleteAllFeedbacks() {
+		feedbackDao.deleteAllFeedbacks();
+	
+	}
     
 }

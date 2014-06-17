@@ -37,6 +37,15 @@ goodApp.controller("SpeakupCtrl", function($scope, $log, $window, $http) {
 });
 
 goodApp.controller("FeedbacksCtrl", function($scope, $http, $log) {
+	
+	$scope.clearAll = function () {
+		$http.delete("feedbacks").success(function() {
+			fetchFeedbacks();
+		}).error (function () {
+			$log.log("Cannot clear feedbacks");
+		});
+	};
+	
 	function fetchFeedbacks() {
 		$http.get("feedbacks").success( function(data) {
 			$scope.feedbacks = data;
@@ -44,6 +53,7 @@ goodApp.controller("FeedbacksCtrl", function($scope, $http, $log) {
 			$log.log("error while fetching feedbacks");
 		});
 	};
+	
 
 	fetchFeedbacks();
 });
