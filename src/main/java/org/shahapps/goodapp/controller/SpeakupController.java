@@ -24,15 +24,39 @@ public class SpeakupController {
 	}
 	
     @RequestMapping(value="/feedbacks", method=RequestMethod.POST) //, consumes="application/json"
-    public Boolean addFeedback (@RequestBody @Valid 
+    public Integer addFeedback (@RequestBody @Valid 
     										Feedback newFeedBack,
     										BindingResult bindingResult) {
     	
     	if (bindingResult.hasErrors()) {
     		System.out.println ("\nWrong input!!!\n");
-    		return false;
+    		return 1;
     	}
     	feedbackDao.register(newFeedBack);
-    	return true;
+    	return 0;
+    }
+    
+    @RequestMapping(value="/feedbacks2", method=RequestMethod.POST) //, consumes="application/json"
+    public int addFeedback2 (@RequestBody @Valid 
+    										Feedback newFeedBack,
+    										BindingResult bindingResult) {
+    	
+    	if (bindingResult.hasErrors()) {
+    		System.out.println ("\nWrong input!!!\n");
+    		return 1;
+    	}
+    	feedbackDao.register(newFeedBack);
+    	return 0;
+    }
+    
+    @RequestMapping(value="/feedbacks3", method=RequestMethod.POST) //, consumes="application/json"
+    public void addFeedback3 (@RequestBody @Valid 
+    										Feedback newFeedBack,
+    										BindingResult bindingResult) {
+    	
+    	if (bindingResult.hasErrors()) {
+    		System.out.println ("\nWrong input!!!\n");
+    	}
+    	feedbackDao.register(newFeedBack);
     }
 }	
