@@ -1,9 +1,7 @@
 package org.shahapps.goodapp.controller;
 
 
-import java.io.IOException;
 
-import org.codehaus.jackson.map.ObjectMapper;
 import org.shahapps.goodapp.dao.FeedbackDao;
 import org.shahapps.goodapp.domain.Feedback;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.validation.BindingResult;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 
@@ -30,21 +27,21 @@ public class SpeakupController {
 		return "index";
 	}
 	
-    @RequestMapping(value="/feedbacks3", method=RequestMethod.POST, consumes = {"application/json"}) 
-    public Integer addFeedback3 (@RequestBody @Valid  Feedback newFeedback,
+    
+    @RequestMapping(value="/feedbacks", method=RequestMethod.PUT, consumes = {"application/json"}) 
+    public ResponseEntity<Feedback> addFeedbackPut (@RequestBody @Valid  Feedback newFeedback,
     								BindingResult bindingResult ) {
     	
-    	if (bindingResult.hasErrors()) {
-    		System.out.println ("\nWrong input!!!\n");
-    		return 1;
-    	}
+    	HttpHeaders headers = addAccessControllAllowOrigin();
+    	ResponseEntity<Feedback> entity = new ResponseEntity<Feedback>(headers, HttpStatus.OK);
     	feedbackDao.register(newFeedback);
-    	return 0;
+    	return entity;
+    	
     }
-
-    @RequestMapping(value="/feedbacks2", method=RequestMethod.POST, consumes={"application/json"}) 
-    public String addFeedback2 (@RequestBody @Valid Feedback newFeedback,
-    							BindingResult bindingResult ) {
+    
+    @RequestMapping(value="/feedbacksstr", method=RequestMethod.PUT, consumes={"application/json"}) 
+    public String addFeedbackPutStr (@RequestBody @Valid Feedback newFeedback,
+    		BindingResult bindingResult ) {
     	
     	if (bindingResult.hasErrors()) {
     		System.out.println ("\nWrong input!!!\n");
@@ -55,7 +52,7 @@ public class SpeakupController {
     }
     
     @RequestMapping(value="/feedbacks", method=RequestMethod.POST, consumes = {"application/json"}) 
-    public ResponseEntity<Feedback> addFeedback (@RequestBody @Valid  Feedback newFeedback,
+    public ResponseEntity<Feedback> addFeedbackPost (@RequestBody @Valid  Feedback newFeedback,
     								BindingResult bindingResult ) {
     	
     	HttpHeaders headers = addAccessControllAllowOrigin();
@@ -64,7 +61,6 @@ public class SpeakupController {
     	return entity;
     	
     }
-    
     private HttpHeaders addAccessControllAllowOrigin() {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Access-Control-Allow-Origin", "*");
