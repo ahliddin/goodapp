@@ -25,7 +25,7 @@ public class SpeakupController {
 	}
 	
     @RequestMapping(value="/feedbacks", method=RequestMethod.POST) //, consumes="application/json"
-    public boolean addFeedback (@RequestBody @Valid 
+    public Boolean addFeedback (@RequestBody @Valid 
     										Feedback newFeedBack,
     										BindingResult bindingResult) {
     	
