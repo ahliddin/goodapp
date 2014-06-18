@@ -42,10 +42,14 @@ public class RESTTest {
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		HttpEntity request = new HttpEntity(JSONInput, headers);
 		try {
-//			restTemplate.postForObject(
-//					"http://goodapp-shahapps.rhcloud.com/feedbacks", request,
-//					Void.class);
-			list = restTemplate.getForObject("http://goodapp-shahapps.rhcloud.com/feedbacks", ArrayList.class);
+			boolean res = restTemplate.postForObject(
+					"localhost:8080/goodapp/feedbacks", request,
+					boolean.class);
+			
+			System.out.println("\n***POST***" + res + "\n********\n");
+			
+			
+			list = restTemplate.getForObject("localhost:8080/goodapp/feedbacks", ArrayList.class);
 			System.out.println("\n******\n" + list);
 		} catch (Exception e) {
 			System.out.println("\n*******error:  " + e.getMessage());
