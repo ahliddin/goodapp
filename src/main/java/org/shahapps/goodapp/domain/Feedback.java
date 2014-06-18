@@ -27,23 +27,19 @@ public class Feedback implements Serializable
    private Long id;
 
    @NotNull
-   @Size(min = 1, max = 25)
+   @Size(min = 1, max = 30)
    @Pattern(regexp = "[A-Za-z ]*", message = "must contain only letters and spaces")
    private String name;
 
    @NotNull
    @NotEmpty
+   @Size(min = 1, max = 50)
    @Email
    private String email;
 
-//   @NotNull
-//   @Size(min = 10, max = 12)
-//   @Digits(fraction = 0, integer = 12)
-//   @Column(name = "phone_number")
-//   private String phoneNumber;
-
    @NotNull
-   @Size(min=1, max=1200)
+   @NotEmpty
+   @Size(min = 1, max = 250)
    @Column (name="comment")
    private String comment;
    

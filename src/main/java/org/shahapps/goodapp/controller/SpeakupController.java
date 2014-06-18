@@ -25,15 +25,15 @@ public class SpeakupController {
 	}
 	
     @RequestMapping(value="/feedbacks", method=RequestMethod.POST) //, consumes="application/json"
-    public @ResponseBody void addFeedback (@RequestBody @Valid 
+    public boolean addFeedback (@RequestBody @Valid 
     										Feedback newFeedBack,
     										BindingResult bindingResult) {
     	
     	if (bindingResult.hasErrors()) {
     		System.out.println ("\nWrong input!!!\n");
-    		//System.out.println (bindingResult.getErrors())
+    		return false;
     	}
-    	System.out.println (newFeedBack);
     	feedbackDao.register(newFeedBack);
+    	return true;
     }
 }	
