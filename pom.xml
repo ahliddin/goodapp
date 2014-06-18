@@ -211,6 +211,13 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+
 		<!-- Import Spring dependencies, these are either from community or versions 
 			certified in WFK2 -->
 		<dependency>
@@ -328,94 +335,32 @@
 			<version>1.4.01</version>
 		</dependency>
 		<!-- ARQUILLIAN DEPENDECIES -->
-<!-- 
-		<dependency>
-			<groupId>org.jboss.arquillian.testng</groupId>
-			<artifactId>arquillian-testng-container</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.arquillian.junit</groupId>
-			<artifactId>arquillian-junit-container</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.jboss.arquillian.protocol</groupId>
-			<artifactId>arquillian-protocol-servlet</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.shrinkwrap.resolver</groupId>
-			<artifactId>shrinkwrap-resolver-impl-maven</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.arquillian.extension</groupId>
-			<artifactId>arquillian-drone-api</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.arquillian.extension</groupId>
-			<artifactId>arquillian-drone-impl</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.arquillian.extension</groupId>
-			<artifactId>arquillian-drone-selenium</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.arquillian.extension</groupId>
-			<artifactId>arquillian-drone-selenium-server</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.arquillian.extension</groupId>
-			<artifactId>arquillian-drone-webdriver</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-remote-driver</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-server</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.arquillian.core</groupId>
-			<artifactId>arquillian-core-spi</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.github.detro.ghostdriver</groupId>
-			<artifactId>phantomjsdriver</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.opera</groupId>
-			<artifactId>operadriver</artifactId>
-		</dependency>
-
-
-		<dependency>
-			<groupId>org.jboss.spec</groupId>
-			<artifactId>jboss-javaee-6.0</artifactId>
-			<version>1.0.0.Final</version>
-			<type>pom</type>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.arquillian.container</groupId>
-			<artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
-			<version>1.0.0.CR7</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.weld</groupId>
-			<artifactId>weld-core</artifactId>
-			<version>2.1.0.Final</version>
-			<scope>test</scope>
-		</dependency>
- -->
+		<!-- <dependency> <groupId>org.jboss.arquillian.testng</groupId> <artifactId>arquillian-testng-container</artifactId> 
+			</dependency> <dependency> <groupId>org.jboss.arquillian.junit</groupId> 
+			<artifactId>arquillian-junit-container</artifactId> </dependency> <dependency> 
+			<groupId>org.jboss.arquillian.protocol</groupId> <artifactId>arquillian-protocol-servlet</artifactId> 
+			<scope>test</scope> </dependency> <dependency> <groupId>org.jboss.shrinkwrap.resolver</groupId> 
+			<artifactId>shrinkwrap-resolver-impl-maven</artifactId> <scope>test</scope> 
+			</dependency> <dependency> <groupId>org.jboss.arquillian.extension</groupId> 
+			<artifactId>arquillian-drone-api</artifactId> <scope>test</scope> </dependency> 
+			<dependency> <groupId>org.jboss.arquillian.extension</groupId> <artifactId>arquillian-drone-impl</artifactId> 
+			<scope>test</scope> </dependency> <dependency> <groupId>org.jboss.arquillian.extension</groupId> 
+			<artifactId>arquillian-drone-selenium</artifactId> <scope>test</scope> </dependency> 
+			<dependency> <groupId>org.jboss.arquillian.extension</groupId> <artifactId>arquillian-drone-selenium-server</artifactId> 
+			<scope>test</scope> </dependency> <dependency> <groupId>org.jboss.arquillian.extension</groupId> 
+			<artifactId>arquillian-drone-webdriver</artifactId> <scope>test</scope> </dependency> 
+			<dependency> <groupId>org.seleniumhq.selenium</groupId> <artifactId>selenium-remote-driver</artifactId> 
+			<scope>test</scope> </dependency> <dependency> <groupId>org.seleniumhq.selenium</groupId> 
+			<artifactId>selenium-server</artifactId> <scope>test</scope> </dependency> 
+			<dependency> <groupId>org.jboss.arquillian.core</groupId> <artifactId>arquillian-core-spi</artifactId> 
+			</dependency> <dependency> <groupId>com.github.detro.ghostdriver</groupId> 
+			<artifactId>phantomjsdriver</artifactId> </dependency> <dependency> <groupId>com.opera</groupId> 
+			<artifactId>operadriver</artifactId> </dependency> <dependency> <groupId>org.jboss.spec</groupId> 
+			<artifactId>jboss-javaee-6.0</artifactId> <version>1.0.0.Final</version> 
+			<type>pom</type> <scope>provided</scope> </dependency> <dependency> <groupId>org.jboss.arquillian.container</groupId> 
+			<artifactId>arquillian-weld-ee-embedded-1.1</artifactId> <version>1.0.0.CR7</version> 
+			</dependency> <dependency> <groupId>org.jboss.weld</groupId> <artifactId>weld-core</artifactId> 
+			<version>2.1.0.Final</version> <scope>test</scope> </dependency> -->
 	</dependencies>
 	<build>
 		<finalName>goodapp</finalName>
