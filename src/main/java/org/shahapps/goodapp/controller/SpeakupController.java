@@ -27,7 +27,6 @@ public class SpeakupController {
 		return "index";
 	}
 	
-    
     @RequestMapping(value="/feedbacks", method=RequestMethod.PUT, consumes = {"application/json"}) 
     public ResponseEntity<Feedback> addFeedbackPut (@RequestBody @Valid  Feedback newFeedback,
     								BindingResult bindingResult ) {
@@ -39,18 +38,6 @@ public class SpeakupController {
     	
     }
     
-    @RequestMapping(value="/feedbacksstr", method=RequestMethod.PUT, consumes={"application/json"}) 
-    public String addFeedbackPutStr (@RequestBody @Valid Feedback newFeedback,
-    		BindingResult bindingResult ) {
-    	
-    	if (bindingResult.hasErrors()) {
-    		System.out.println ("\nWrong input!!!\n");
-    		return "bad";
-    	}
-    	feedbackDao.register(newFeedback);
-    	return "good";
-    }
-    
     @RequestMapping(value="/feedbacks", method=RequestMethod.POST, consumes = {"application/json"}) 
     public ResponseEntity<Feedback> addFeedbackPost (@RequestBody @Valid  Feedback newFeedback,
     								BindingResult bindingResult ) {
@@ -59,8 +46,8 @@ public class SpeakupController {
     	ResponseEntity<Feedback> entity = new ResponseEntity<Feedback>(headers, HttpStatus.OK);
     	feedbackDao.register(newFeedback);
     	return entity;
-    	
     }
+ 
     private HttpHeaders addAccessControllAllowOrigin() {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Access-Control-Allow-Origin", "*");

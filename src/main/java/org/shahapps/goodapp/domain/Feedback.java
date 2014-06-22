@@ -16,10 +16,8 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-//@Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class Feedback implements Serializable
 {
-   /** Default value included to remove warning. Remove or modify at will. **/
    private static final long serialVersionUID = 2L;
 
    @Id

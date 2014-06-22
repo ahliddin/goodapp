@@ -1,6 +1,3 @@
-## Project OpenShift Branch 
-
-This branch includes the project that is run on OpenShift (http://goodapp-shahapps.rhcloud.com).
 
 ### How to build the project
 

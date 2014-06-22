@@ -30,11 +30,6 @@ public class FeedbackDaoImpl implements FeedbackDao {
         CriteriaQuery<Feedback> criteria = builder.createQuery(Feedback.class);
         Root<Feedback> feedback = criteria.from(Feedback.class);
 
-        /*
-         * Swap criteria statements if you would like to try out type-safe criteria queries, a new
-         * feature in JPA 2.0 criteria.select(member).orderBy(cb.asc(member.get(Member_.name)));
-         */
-
         criteria.select(feedback).where(builder.equal(feedback.get("email"), email));
         return em.createQuery(criteria).getSingleResult();
     }
@@ -44,10 +39,6 @@ public class FeedbackDaoImpl implements FeedbackDao {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Feedback> criteria = cb.createQuery(Feedback.class);
         Root<Feedback> feedback = criteria.from(Feedback.class);
-        /*
-         * Swap criteria statements if you would like to try out type-safe criteria queries, a new
-         * feature in JPA 2.0 criteria.select(member).orderBy(cb.asc(member.get(Member_.name)));
-         */
 
         criteria.select(feedback).orderBy(cb.asc(feedback.get("name")));
         return em.createQuery(criteria).getResultList();
