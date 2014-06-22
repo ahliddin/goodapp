@@ -27,7 +27,6 @@ public class SpeakupTest {
 		driver.findElement(By.cssSelector("button.btn.btn-default")).click();
 	}
 	
-
 	/*
 	 * Assert, whether properly filled up form is submitted.
 	 */
@@ -44,7 +43,6 @@ public class SpeakupTest {
 
 		Thread.sleep(2000);
 	}
-	
 	
 	/*
 	 * Form with empty NAME field cannot be submitted.

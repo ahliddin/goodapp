@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:test-context.xml",
-"classpath:/META-INF/spring/applicationContext.xml"})
+						"classpath:/META-INF/spring/applicationContext.xml"})
 @Transactional
 @TransactionConfiguration(defaultRollback=true)
 public class FeedbackDaoTest {
@@ -25,7 +25,6 @@ public class FeedbackDaoTest {
 
     @Test
     public void testFindById() {
-    	
         Feedback feedback = feedbackDao.findById(0l);
 
         Assert.assertEquals("John Travolta", feedback.getName());
@@ -36,10 +35,8 @@ public class FeedbackDaoTest {
     }
 
     @Test
-    public void testFindByEmail()
-    {
+    public void testFindByEmail() {
         Feedback feedback = feedbackDao.findByEmail("john.travolta@mailinator.com");
-
         Assert.assertEquals("John Travolta", feedback.getName());
         Assert.assertEquals("john.travolta@mailinator.com", feedback.getEmail());
         Assert.assertEquals("I dance like a jagger", feedback.getComment());
@@ -49,7 +46,6 @@ public class FeedbackDaoTest {
 
     @Test
     public void testRegister() {
-    	
         Feedback feedback = new Feedback();
         feedback.setEmail("marylin.monroe@mailinator.com");
         feedback.setName("Marylin Monroe");
@@ -71,8 +67,7 @@ public class FeedbackDaoTest {
     }
 
     @Test
-    public void testFindAllOrderedByName()
-    {
+    public void testFindAllOrderedByName() {
     	Feedback feedback = new Feedback();
         feedback.setEmail("marylin.monroe@mailinator.com");
         feedback.setName("Marylin Monroe");

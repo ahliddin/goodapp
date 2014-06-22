@@ -68,19 +68,17 @@ public class RESTTest {
 		HttpEntity<String> request = new HttpEntity<String>(JSONInput, headers);
 
 		try {
-			restTemplate
-					.put("http://goodapp-shahapps.rhcloud.com/feedbacks",
-							request);
-			list = restTemplate.getForObject(
-					"http://goodapp-shahapps.rhcloud.com/feedbacks",
-					ArrayList.class);
+			restTemplate.put("http://goodapp-shahapps.rhcloud.com/feedbacks", request);
+			list = restTemplate.getForObject("http://goodapp-shahapps.rhcloud.com/feedbacks",
+											  ArrayList.class);
 
 			assertEquals(1, list.size());
 			assertEquals(name, list.get(0).getName());
 			assertEquals(email, list.get(0).getEmail());
 			assertEquals(comment, list.get(0).getComment());
 			assertEquals(spam, list.get(0).getSpam());
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			System.out.println("\n***error:  " + e.getMessage());
 		}
 	}
@@ -111,15 +109,13 @@ public class RESTTest {
 		HttpEntity<String> request = new HttpEntity<String>(JSONInput, headers);
 
 		try {
-			restTemplate.put("http://goodapp-shahapps.rhcloud.com/feedbacks",
-					request);
-			list = restTemplate.getForObject(
-					"http://goodapp-shahapps.rhcloud.com/feedbacks",
-					ArrayList.class);
+			restTemplate.put("http://goodapp-shahapps.rhcloud.com/feedbacks", request);
+			list = restTemplate.getForObject("http://goodapp-shahapps.rhcloud.com/feedbacks",
+											  ArrayList.class);
 
 			assertEquals(0, list.size());
-
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			System.out.println("\n***error:  " + e.getMessage());
 		}
 	}
@@ -150,15 +146,13 @@ public class RESTTest {
 		HttpEntity<String> request = new HttpEntity<String>(JSONInput, headers);
 
 		try {
-			restTemplate.put("http://goodapp-shahapps.rhcloud.com/feedbacks",
-					request);
-			list = restTemplate.getForObject(
-					"http://goodapp-shahapps.rhcloud.com/feedbacks",
-					ArrayList.class);
+			restTemplate.put("http://goodapp-shahapps.rhcloud.com/feedbacks", request);
+			list = restTemplate.getForObject("http://goodapp-shahapps.rhcloud.com/feedbacks",
+											  ArrayList.class);
 
 			assertEquals(0, list.size());
-
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			System.out.println("\n***error:  " + e.getMessage());
 		}
 	}
@@ -191,13 +185,12 @@ public class RESTTest {
 		try {
 			restTemplate.put("http://goodapp-shahapps.rhcloud.com/feedbacks",
 					request);
-			list = restTemplate.getForObject(
-					"http://goodapp-shahapps.rhcloud.com/feedbacks",
-					ArrayList.class);
+			list = restTemplate.getForObject("http://goodapp-shahapps.rhcloud.com/feedbacks",
+											  ArrayList.class);
 
 			assertEquals(0, list.size());
-
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			System.out.println("\n***error:  " + e.getMessage());
 		}
 	}
@@ -230,13 +223,12 @@ public class RESTTest {
 		try {
 			restTemplate.put("http://goodapp-shahapps.rhcloud.com/feedbacks",
 					request);
-			list = restTemplate.getForObject(
-					"http://goodapp-shahapps.rhcloud.com/feedbacks",
-					ArrayList.class);
+			list = restTemplate.getForObject("http://goodapp-shahapps.rhcloud.com/feedbacks",
+											  ArrayList.class);
 
 			assertEquals(0, list.size());
-
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			System.out.println("\n***error:  " + e.getMessage());
 		}
 	}
@@ -269,13 +261,12 @@ public class RESTTest {
 		try {
 			restTemplate.put("http://goodapp-shahapps.rhcloud.com/feedbacks",
 					request);
-			list = restTemplate.getForObject(
-					"http://goodapp-shahapps.rhcloud.com/feedbacks",
-					ArrayList.class);
+			list = restTemplate.getForObject("http://goodapp-shahapps.rhcloud.com/feedbacks",
+											  ArrayList.class);
 
 			assertEquals(0, list.size());
-
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			System.out.println("\n***error:  " + e.getMessage());
 		}
 	}
@@ -308,15 +299,13 @@ public class RESTTest {
 		HttpEntity<String> request = new HttpEntity<String>(JSONInput, headers);
 
 		try {
-			restTemplate.put("http://goodapp-shahapps.rhcloud.com/feedbacks",
-					request);
-			list = restTemplate.getForObject(
-					"http://goodapp-shahapps.rhcloud.com/feedbacks",
-					ArrayList.class);
+			restTemplate.put("http://goodapp-shahapps.rhcloud.com/feedbacks", request);
+			list = restTemplate.getForObject("http://goodapp-shahapps.rhcloud.com/feedbacks",
+											  ArrayList.class);
 
 			assertEquals(0, list.size());
-
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			System.out.println("\n***error:  " + e.getMessage());
 		}
 	}
@@ -347,15 +336,13 @@ public class RESTTest {
 		HttpEntity<String> request = new HttpEntity<String>(JSONInput, headers);
 
 		try {
-			restTemplate.put("http://goodapp-shahapps.rhcloud.com/feedbacks",
-					request);
-			list = restTemplate.getForObject(
-					"http://goodapp-shahapps.rhcloud.com/feedbacks",
-					ArrayList.class);
+			restTemplate.put("http://goodapp-shahapps.rhcloud.com/feedbacks", request);
+			list = restTemplate.getForObject("http://goodapp-shahapps.rhcloud.com/feedbacks",
+											  ArrayList.class);
 
 			assertEquals(0, list.size());
-
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			System.out.println("\n***error:  " + e.getMessage());
 		}
 	}
@@ -396,11 +383,11 @@ public class RESTTest {
 		
 		try {
 			restTemplate.put("http://goodapp-shahapps.rhcloud.com/feedbacks", request);
-			list = restTemplate.getForObject("http://goodapp-shahapps.rhcloud.com/feedbacks", ArrayList.class);
+			list = restTemplate.getForObject("http://goodapp-shahapps.rhcloud.com/feedbacks",
+											  ArrayList.class);
 
 			assertEquals(0, list.size());
-			
-		}
+		} 
 		catch (Exception e) {
 			System.out.println("\n***error:  " + e.getMessage());
 		}

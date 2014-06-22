@@ -1,6 +1,5 @@
 package org.shahapps.goodapp.ui.test;
 
-
 import java.util.concurrent.TimeUnit;
 
 import org.jboss.arquillian.drone.api.annotation.Drone;
@@ -13,7 +12,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-
 /*
  * Here we test the functionality of feedbackspage.html
  * 
@@ -23,7 +21,6 @@ public class FeedbacksTest {
 
 	@Drone
 	WebDriver driver;
-
 	
 	/* 
 	 * Inserting some feedback - making sure the table is not empty.
@@ -56,8 +53,4 @@ public class FeedbacksTest {
 
 		Thread.sleep(2000);
 	}
-	
-	
-	
-
 }
